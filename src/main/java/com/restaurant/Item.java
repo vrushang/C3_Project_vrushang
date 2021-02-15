@@ -13,6 +13,10 @@ public class Item {
         return name;
     }
 
+    public int getPrice() {
+        return price;
+    }
+
     @Override
     public String toString(){
         return  name + ":"

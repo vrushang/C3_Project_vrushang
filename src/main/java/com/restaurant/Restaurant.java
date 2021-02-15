@@ -10,6 +10,7 @@ public class Restaurant {
     private String location;
     public LocalTime openingTime;
     public LocalTime closingTime;
+    public int total =0;
     private List<Item> menu = new ArrayList<Item>();
 
     public Restaurant(String name, String location, LocalTime openingTime, LocalTime closingTime) {
@@ -72,6 +73,15 @@ public class Restaurant {
         return name;
     }
 
+//calculate total order value
+    public int getTotalOrderValue(List<String> itemNames,Restaurant restaurant){
+        for (String intemName :itemNames){
+            if (restaurant.getMenu().contains(findItemByName(intemName))){
+                total += findItemByName(intemName).getPrice();
+            }
+        }
+        return total;
+    }
 
 
 
